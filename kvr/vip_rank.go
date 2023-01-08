@@ -7,3 +7,13 @@ type VIPRank struct {
 }
 
 type VIPRankList []VIPRank
+
+func (vl *VIPRankList) GetTitle(power uint64) string {
+	for _, v := range *vl {
+		if (v.Max == 0 && v.Min <= power) || (v.Max > 0 && v.Min <= power && v.Max >= power) {
+			return v.Title
+		}
+	}
+
+	return ""
+}
