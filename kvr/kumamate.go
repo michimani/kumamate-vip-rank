@@ -156,7 +156,6 @@ func (c *Client) fetchVIPRankFromOrigin() (VIPRankList, error) {
 
 			current.Min = pow
 			tmp := current
-			fmt.Printf("%#+v\n", tmp)
 			vrs = append(vrs, tmp)
 			current.Max = pow - 1
 		}
